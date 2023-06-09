@@ -1,6 +1,6 @@
 # workflows_workshop
 
-**workflows.ipynb** is a workbook for the 2022 bootcamp session providing a high-level overview of Nextflow and Snakemake and detailing configuring them for OSCAR. 
+**workflows_2022.ipynb** is a workbook for the 2022 bootcamp session providing a high-level overview of Nextflow and Snakemake and detailing configuring them for OSCAR. 
 
 **Workflows_Nextflow_2023.ipynb** is an updated workbook for the 2023 bootcmap and is based on workflows.ipynb. It discusses both Nextflow and Snakemake and configuring them for OSCAR but we've added a discussion about setting up and executing a basic Nextflow workflow on OSCAR. 
 
