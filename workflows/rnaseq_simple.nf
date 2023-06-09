@@ -361,6 +361,14 @@ workflow PROCESS_SAMPLE {
         multiqc(fastqcs, fastqc_screens, qualimaps, htseq_counts)
 }
 
+// Function to resolve files
+def get_sample_info(LinkedHashMap sample) {
+    read1  = sample.read1 ? file(sample.read1, checkIfExists: true) : null
+    read2 = sample.read2 ? file(sample.read2, checkIfExists: true) : null
+
+    return [ sample.sample_id, read1, read2 ]
+}
+
 workflow {
      reference_genome = params.reference_genome
 
