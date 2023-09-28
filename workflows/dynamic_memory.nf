@@ -11,7 +11,7 @@ process sayHello {
   script:
     """
     echo 'Hello ${name}!' > hello.txt
-    echo $( stat -c '%s' hello.txt ) * 3 ### get the size of the output file and multiply it by 3
+    echo \$(( \$( stat -c '%s' hello.txt ) * 3 )) ### get the size of the output file and multiply it by 3
     """
 }
 
