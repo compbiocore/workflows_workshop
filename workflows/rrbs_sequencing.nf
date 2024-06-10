@@ -15,7 +15,7 @@ process trimmomatic {
   
   script:
     """
-      module load trimmomatic/0.39
+      module load trimmomatic/0.39-w5jnhai
       TrimmomaticSE ${read} ${read.getBaseName()}_tr.fq.gz ILLUMINACLIP:/gpfs/data/cbc/cbc_conda_v1/envs/cbc_conda/opt/trimmomatic-0.36/adapters/TruSeq3-SE.fa:2:30:5:6:true SLIDINGWINDOW:10:25 MINLEN:50
     """
 }
@@ -31,7 +31,7 @@ process fastqc {
 
   script:
     """
-      module load fastqc/0.11.5
+      module load fastqc/0.11.9-mvd2uhw
       fastqc ${read}
     """
    
@@ -49,7 +49,7 @@ process fastqc_trimmed {
 
   script:
     """
-      module load fastqc/0.11.5
+      module load fastqc/0.11.9-mvd2uhw
       fastqc ${trimmed_read}
     """
 }
@@ -69,8 +69,8 @@ process alignment {
 
   script:
    """
-    module load bismark/0.20.0
-    module load bowtie2/2.4.2
+    module load bismark/0.23.0-eoksupu
+    module load bowtie2/2.5.3-qgscc2u
     bismark -o `pwd` --bowtie2 --genome /gpfs/data/shared/databases/refchef_refs/S_scrofa/primary/bismark_index --un --pbat ${trimmed_read}
    """  
 
