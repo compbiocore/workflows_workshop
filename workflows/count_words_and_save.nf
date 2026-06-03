@@ -15,13 +15,13 @@ process sayHello {
 }
 
 process countWords {
+  publishDir "${params.out_dir}/", mode: 'copy'
+
   input: 
     path(file_in)
   output:
     path("count_words.txt")
 
-  publishDir "${params.out_dir}/", mode: 'copy'
-  
   script:
    """
    wc -w ${file_in} | awk '{print \$1}' > count_words.txt
